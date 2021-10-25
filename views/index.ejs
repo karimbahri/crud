@@ -1,0 +1,35 @@
+<%- include('includes/_header')%>
+
+    <!-- main -->
+    <main id="main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">New User<i class="fas fa-user"></i> </span>
+                </a>
+            </div>
+            <!-- form input -->
+            <div>
+                <form action="/" method="post">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <%- include('includes/_show')%>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+<%- include('includes/_footer')%>
