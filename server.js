@@ -2,6 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
+const routes = require('./server/routes/routes');
+const connect = require('./server/database/connections');
 
 dotenv.config({ path: `${__dirname}/config.env` });
 const app = express();
@@ -13,16 +15,9 @@ app.use("/js", express.static(path.resolve(__dirname, "asserts/js")));
 
 app.set("view engine", "ejs");
 
-app
-  .get("/", (req, res) => {
-    res.render("index");
-  })
-  .get("/add-user", (req, res) => {
-    res.render("add_user");
-  })
-  .get("/update-user", (req, res) => {
-    res.render("update_user");
-  });
+app.use('/', routes);
+
+connect();
 
 // app.use(morgan("dev")); // development mode
 app.listen(port, () => {
