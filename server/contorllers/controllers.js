@@ -37,8 +37,11 @@ exports.createUser = (req, res) => {
     })
 }
 exports.findUser = (req, res) => {
+    let filter_object = {}
+    if (req.query)
+      filter_object = req.query;
     userModel
-      .find()
+      .find(filter_object)
       .then(data => {
           res
             .status(200)
