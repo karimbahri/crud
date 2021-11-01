@@ -5,7 +5,7 @@ const path = require("path");
 const routes = require('./server/routes/routes');
 const connect = require('./server/database/connections');
 
-dotenv.config({ path: `${__dirname}/config.env` });
+dotenv.config({ path: `${__dirname}/_config.env` });
 const app = express();
 const port = process.env.PORT || 5000;
 

@@ -1,2 +1,4 @@
 node_modules/
 views/_header.ejs
+_config.env
+config.env
